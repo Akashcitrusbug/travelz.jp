@@ -1,0 +1,19 @@
+{
+    "whattodonext":[
+    {
+      "id":1,
+      "cardname":"Proceed to Timeline",
+      "iconname":"custom-icon proceed-timeline-icon"
+    },
+    {
+        "id":2,
+        "cardname":"Create a map",
+        "iconname":"custom-icon create-map-icon"
+      },
+      {
+        "id":3,
+        "cardname":"Create a travel plan",
+        "iconname":"custom-icon travel-plan-icon"
+      }
+  ]
+}

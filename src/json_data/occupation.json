@@ -1,0 +1,24 @@
+{
+    "occupation":[
+    {
+      "id":1,
+      "occupation_name":"School Student"
+    },
+    {
+      "id":2,
+      "occupation_name":"University Student"
+    },
+    {
+      "id":3,
+      "occupation_name":"Agriculture"
+    },
+    {
+      "id":4,
+      "occupation_name":"Travel"
+    },
+    {
+      "id":5,
+      "occupation_name":"Other"
+    }
+  ]
+}
