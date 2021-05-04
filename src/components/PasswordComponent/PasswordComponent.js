@@ -82,6 +82,9 @@ function PasswordComponent({currentpage}) {
           }
           return isValid
       }
+      const handleprevious = () => {
+        currentpage({id:6})
+    }
 
     const handleChange = (e) => {
     setSelectedPassword({
@@ -181,7 +184,7 @@ function PasswordComponent({currentpage}) {
                                         <div className="col-lg-12 plr-8">
                                             <div className="button-row">
                                                 <div className="btn-left-side justify-content-between"> 
-                                                    <button className="btn btn-outline-primary btn-common btn-previous">
+                                                    <button className="btn btn-outline-primary btn-common btn-previous" onClick={handleprevious}>
                                                         <i className="fe fe-arrow-left fe-icon"></i>
                                                         <span className="text-span">Previous</span>
                                                     </button>

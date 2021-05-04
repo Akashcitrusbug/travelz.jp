@@ -153,11 +153,11 @@ function UserRegistration({currentpage}) {
                                     <div className="col-lg-12 plr-8">
                                         <div className="button-row">
                                             <div className="btn-left-side justify-content-between"> 
-                                                <button className="btn btn-outline-primary btn-common btn-previous">
+                                                {/* <button className="btn btn-outline-primary btn-common btn-previous">
                                                     <i className="fe fe-arrow-left fe-icon"></i>
                                                     <span className="text-span">Previous</span>
                                                 </button>
-                                                <a href="#" className="btn btn-link btn-skip mr-30">Skip <span className="remove-mobile">to End of </span>Process!</a>
+                                                <a href="#" className="btn btn-link btn-skip mr-30">Skip <span className="remove-mobile">to End of </span>Process!</a> */}
                                             </div>
                                             <div className="btn-right-side"> 
                                                 <button className="btn btn-primary btn-common btn-continue" onClick={handleContinue}>

@@ -43,6 +43,10 @@ function ChooseUserComponent({currentpage}) {
         console.log(selectedUsers, 'final');
         setSelectedUser(selectedUsers)
     }
+
+    const handleprevious = () => {
+        currentpage({id:4})
+    }
     return (
         <div className="common-div follow-div">
                 <div className="container">
@@ -108,7 +112,7 @@ function ChooseUserComponent({currentpage}) {
                                         <div className="col-lg-12 plr-8">
                                             <div className="button-row">
                                                 <div className="btn-left-side justify-content-between"> 
-                                                    <button className="btn btn-outline-primary btn-common btn-previous">
+                                                    <button className="btn btn-outline-primary btn-common btn-previous" onClick={handleprevious}>
                                                         <i className="fe fe-arrow-left fe-icon"></i>
                                                         <span className="text-span">Previous</span>
                                                     </button>
