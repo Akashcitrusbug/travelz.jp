@@ -171,7 +171,7 @@ function PasswordComponent({currentpage}) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div style={{color:'#cc9900'}}>Password must contain: <br /><br />1. Minimum 8 characters <br />2. A Capital letter <br />3. A Small letter <br />4. A Number.</div>
+                                        {/* <div style={{color:'#cc9900'}}>Password must contain: <br /><br />1. Minimum 8 characters <br />2. A Capital letter <br />3. A Small letter <br />4. A Number.</div> */}
 
                                     </div>
 
