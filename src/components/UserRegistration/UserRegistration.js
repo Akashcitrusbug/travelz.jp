@@ -5,6 +5,7 @@ import InputComponent from '../../UI/InputComponent/InputComponent';
 import { connect } from 'react-redux'
 import { setCurrentPage } from '../../redux/actions';
 
+var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
 function UserRegistration({currentpage}) {
     const initialState = {
         name:"",
@@ -47,8 +48,7 @@ function UserRegistration({currentpage}) {
             })
             return isValid=false;
         }
-
-        if(!email.includes('@')){
+        if(!pattern.test(email)){
             setFormError({
                 emailError:'Invalid Email'
             })
@@ -63,6 +63,10 @@ function UserRegistration({currentpage}) {
             ...formData,
             [e.target.name]: e.target.value,
         });
+        setFormError({
+            nameError:'',
+            emailError:''
+        })
     };
     return (
         <div className="common-div user-registration-div">

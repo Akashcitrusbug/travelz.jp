@@ -2,23 +2,28 @@
     "occupation":[
     {
       "id":1,
-      "occupation_name":"School Student"
+      "occupation_name":"School Student",
+      "icon_name":"school-students-icon"
     },
     {
       "id":2,
-      "occupation_name":"University Student"
+      "occupation_name":"University Student",
+      "icon_name":"university-students-icon"
     },
     {
       "id":3,
-      "occupation_name":"Agriculture"
+      "occupation_name":"Agriculture",
+      "icon_name":"agriculture-icon"
     },
     {
       "id":4,
-      "occupation_name":"Travel"
+      "occupation_name":"Travel",
+      "icon_name":"travel-icon"
     },
     {
       "id":5,
-      "occupation_name":"Other"
+      "occupation_name":"Other",
+      "icon_name":"other-icon"
     }
   ]
 }
