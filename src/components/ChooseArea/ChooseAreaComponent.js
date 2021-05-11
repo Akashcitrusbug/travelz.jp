@@ -7,8 +7,7 @@ import { setCurrentPage } from '../../redux/actions';
 function ChooseAreComponent({currentpage}) {
     const [selectedArea, setSelectedArea] = useState([])
     const [areaError, setAreaEror] = useState('')
-
-
+    const [serarchTerm, setSearchTerm] = useState('');
     // console.log(selectedArea,'selectedArea')
 
     const handleContinue = () => {
@@ -67,7 +66,7 @@ function ChooseAreComponent({currentpage}) {
                                 <div className="row get-row mr-minus-8">
                                     <div className="col-lg-12 col-md-12 plr-8">
                                         <div className="input-group input-group-30">
-                                            <input type="text" className="form-control" placeholder="Select Areas to Follow" />
+                                            <input type="text" className="form-control" placeholder="Select Areas to Follow" onChange={(event)=>setSearchTerm(event.target.value)}/>
                                             <div className="input-group-append">
                                                 <button className="btn btn-success btn-search"><i className="material-icons search-icons"> search </i></button>
                                             </div>
@@ -84,7 +83,13 @@ function ChooseAreComponent({currentpage}) {
                                 </div>
                                 <div className="row get-row mr-minus-8">
                                     {
-                                        Area.area.map((area, index)=>{
+                                        Area.area.filter((val)=>{
+                                            if (serarchTerm==""){
+                                                return val;
+                                            } else if (val.area_name.toLowerCase().includes(serarchTerm.toLowerCase())){
+                                                return val
+                                            }
+                                        }).map((area, index)=>{
                                             return <ChooseAreaItem 
                                             key={index} 
                                             areadata={area} 

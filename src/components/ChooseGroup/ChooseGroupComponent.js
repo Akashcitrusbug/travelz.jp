@@ -7,6 +7,7 @@ import { setCurrentPage } from '../../redux/actions';
 function ChooseGroupComponent({currentpage}) {
     const [selectedGroup, setSelectedGroup] = useState([])
     const [groupError, setGroupError] = useState('')
+    const [serarchTerm, setSearchTerm] = useState('');
 
 
     console.log(selectedGroup,'selectedGroup')
@@ -67,7 +68,7 @@ function ChooseGroupComponent({currentpage}) {
                                         <div className="row get-row mr-minus-8">
                                             <div className="col-lg-12 col-md-12 plr-8">
                                                 <div className="input-group input-group-30">
-                                                    <input type="text" className="form-control" placeholder="Select Group to Follow" />
+                                                    <input type="text" className="form-control" placeholder="Select Group to Follow" onChange={(event)=>setSearchTerm(event.target.value)}/>
                                                     <div className="input-group-append">
                                                         <button className="btn btn-success btn-search"><i className="material-icons search-icons"> search </i></button>
                                                     </div>
@@ -85,7 +86,13 @@ function ChooseGroupComponent({currentpage}) {
                                         {groupError ? <span style={{color: "red"}}>{groupError.groupError}</span> : ''}
                                         <div className="row get-row mr-minus-8">
                                             {
-                                                Group.group.map((group, index)=>{
+                                                Group.group.filter((val)=>{
+                                                    if (serarchTerm==""){
+                                                        return val;
+                                                    } else if (val.name.toLowerCase().includes(serarchTerm.toLowerCase())){
+                                                        return val
+                                                    }
+                                                }).map((group, index)=>{
                                                    return <ChooseGroupItem 
                                                    key={index} 
                                                    groupdata={group}

@@ -8,6 +8,7 @@ function ChooseUserComponent({currentpage}) {
 
     const [selectedUser, setSelectedUser] = useState([])
     const [userError, setUserError] = useState('')
+    const [serarchTerm, setSearchTerm] = useState('');
 
 
     console.log(selectedUser,'selectedUser')
@@ -69,7 +70,7 @@ function ChooseUserComponent({currentpage}) {
                                         <div className="row get-row mr-minus-8">
                                             <div className="col-lg-12 col-md-12 plr-8">
                                                 <div className="input-group input-group-30">
-                                                    <input type="text" className="form-control" placeholder="Select User to Follow" />
+                                                    <input type="text" className="form-control" placeholder="Select User to Follow" onChange={(event)=>setSearchTerm(event.target.value)}/>
                                                     <div className="input-group-append">
                                                         <button className="btn btn-success btn-search"><i className="material-icons search-icons"> search </i></button>
                                                     </div>
@@ -87,7 +88,13 @@ function ChooseUserComponent({currentpage}) {
                                         {userError ? <span style={{color: "red"}}>{userError.userError}</span> : ''}
                                         <div className="row get-row mr-minus-8">
                                             {
-                                                User.user.map((user, index)=>{
+                                                User.user.filter((val)=>{
+                                                    if (serarchTerm==""){
+                                                        return val;
+                                                    } else if (val.username.toLowerCase().includes(serarchTerm.toLowerCase())){
+                                                        return val
+                                                    }
+                                                }).map((user, index)=>{
                                                     return <ChooseUserItem 
                                                     key={index} 
                                                     userdata={user} 
